@@ -1,12 +1,12 @@
 lucide.createIcons();
 
 
-onboardingSection = document.getElementById("onboarding");
-departmentSection = document.getElementById("department-section");
-facultySection = document.getElementById("faculty-section");
-checkListSection = document.getElementById("checkList-section");
-progressSection = document.getElementById('progress-section');
-directionSection = document.getElementById("direction-section");
+const onboardingSection = document.getElementById("onboarding");
+const departmentSection = document.getElementById("department-section");
+const facultySection = document.getElementById("faculty-section");
+const checkListSection = document.getElementById("checkList-section");
+const progressSection = document.getElementById('progress-section');
+const directionSection = document.getElementById("direction-section");
 const rmdSection = document.getElementById('rmd-section');
 
 onboardingCta = document.querySelector(".cta-onboarding");
