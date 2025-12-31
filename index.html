@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide</title>
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- onboarding section -->
+    <section class="onboarding-section visible" id="onboarding">
+        <div class="header h-[20vh] relative">
+            <img src="admin.jfif" class="header-img">
+            <div class="absolute z-10 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+        </div>
+        <h1 class="text-3xl font-semibold py-2 px-3 mt-3">Congratulations </h1>
+        <p class="text-gray-700 px-3 py-2 mt-3 ;eading-relaxed">
+            <span class="text-xl">The hard part is over.</span>
+
+            You beat the odds and secured your admission. Now, let's make 
+            sure the paperwork doesn't get in the way of your 
+            celebration. Welcome to the University of Osun State.
+        </p>
+
+        <button class="cta cta-onboarding absolute z-10 bottom-[24px] left-[24px] text-center  px-6">
+            Continue
+        </button>
+    </section>
+
+    <!-- Choose Department section -->
+    <section class="department-section p-3" id="department-section">
+        <h1 class="text-3xl font-semibold">
+            What's your field of study?
+        </h1>
+
+        <div class="input-placeholder mt-6 mb-9 flex items-center gap-3 px-4">
+            <i data-lucide="search" class="text-gray-700"></i>
+            <input type="text" id="dept-search" placeholder="search for your department...">
+        </div>
+
+        <div id="department-container" class="flex flex-wrap gap-3 items-center"></div>
+
+        <button class="department-btn fixed text-center bottom-[24px] left-[24px]">Next</button>
+    </section>
+
+    <!-- faculty section -->
+    <section class="faculty-section p-3" id="faculty-section">
+        <p>Spot on </p>
+
+        <p class="mt-3">you belong to <span id="faculty-display" class="font-semibold "></span></p>
+
+        <p class="mt-3">
+            All  your departmental screening and faculty files 
+            will be handed at the faculty office. Getting here wasn't 
+            easy, but you did it! Now let's get your clearance sorted 
+            at the campus so you can start your journey officially.
+        </p>
+
+        <div class="btn-placeholder flex items-center fixed bottom-[24px] left-[24px]">
+            <button id="bt-dept-btn" class="flex items-center justify-center"><i data-lucide="arrow-left"></i></button>
+            <button id="facBtn">Continue</button>
+        </div>
+    </section>
+
+
+
+
+    <!-- check list section -->
+    <section class="checkList-section p-3 relative pb-[200px]" id="checkList-section">
+        <p>
+            Okay let's get you sorted!. Check the boxes for the things 
+            you already have in your folder, and we'll help you figure 
+            out how to get the rest.
+        </p>
+
+
+        <div class="flex items-center justify-between mt-6 w-[100%]">
+            <h2 class="text-xl font-semibold">Required Files</h2>
+
+            <button class="right flex items-center gap-2 item-all">
+                <div class="checker checker-all">
+                    <div class="check check-all"></div>
+                </div>
+
+                <p>Select All</p>
+            </button>
+        </div>
+        <ul class="checklist mt-4 flex flex-col gap-2">
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item1">JAMB Admission Letter (original copy)</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item2">Acceptance Receipt</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item3">O'Level Result</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item4">Birth Certificate</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item5">Passport Photograph (at least 30 copies)</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item6">State of Origin Certificate</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item7">Medical Clearance</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item8">Screening Result</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item9">Osun Admission Letter</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item10">Tax Clearance</label>
+            </li>
+            <li class="item">
+                <div class="checker">
+                    <div class="check"></div>
+                </div>
+                <label for="item11">JAMB Result</label>
+            </li>
+        </ul>
+
+        <div class="note mt-6">
+            <p class="font-semibold">Note:</p>
+            <p>Make sure you have at least 4 cpoies each of all these documents before
+                proceeding.
+            </p>
+        </div>
+        
+        <div class="note mt-6">
+            <p class="font-semibold">Pro Tip:</p>
+            <p>
+                There are several places to print your document on campus,
+                including the library, downtown, cisco etc. check the map to
+                find the nearest one.
+            </p>
+        </div>
+
+
+
+        <div class="fixed z-1 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+        <button class="cta fixed z-10 bottom-[24px] left-[24px]" id="checklist-cta">Continue</button>
+    </section>
+
+
+    <!-- progress Section -->
+    <section class="progress-section p-3 pb-[200px]" id="progress-section">
+        <div class="progress-header p-5 rounded-xl">
+            <h1 class="text-3xl font-semibold"><span id="percentageDisplay"></span>%</h1>
+            <p class="text-sm mb-4">You have <span id="checkedCountDipslay">10 </span> / 11 files ready</p>
+
+            <div class="progress-bar h-[24px] w-[100%] rounded-[999px] p-[4px] relative bg-gray-300">
+                <div class="progress h-[20px] rounded-[999px] absolute top-[2px] left-[2px]" id="progress"></div>
+            </div>
+        </div>
+
+
+        <h1 class=" mt-9 text-xl font-semibold">Unchecked Items</h1>
+        <div id="unchecked-accordion" class="accordion-container mt-2">
+            <!-- accordion of unchecked items -->
+        </div>
+
+
+        <div>
+            <h1 class="text-xl mt-9 font-semibold">Where to Go</h1>
+        </div>
+
+        <div class="fixed z-1 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+        <button class="cta fixed z-10 bottom-[24px] left-[24px]" id="progress-cta">Continue</button>
+    </section>
+
+
+
+
+
+
+
+    <!-- direction section -->
+    <section class="direction-section p-3" id="direction-section">
+        <div>
+            <p class="text-gray-700">
+                Since you are a <span id="deptName" class="font-semibold">Computer Science </span>
+                student under <span id="facName" class="font-semibold">FOCIT</span> you would submit 
+                all your files at the faculty office at the faculty officer's building.
+            </p>
+        </div>
+
+        <div class="mt-6 w-[100%] h-[400px] bg-gray-200"></div>
+
+        <p class="text-gray-700 mt-6">
+            <span class="font-bold">Note: </span> you should have an extra copy of all 
+            those files for yourself.
+        </p>
+
+        <p class="mt-6 text-gray-700">
+            Oya, you're all set! You've done all the hard part, now go and 
+            finish the process at the faculty office. See you on the other 
+            side Scholar!
+        </p>
+
+
+
+        <div class="fixed z-1 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
+        <button class="cta fixed z-10 bottom-[24px] left-[24px]" id="direction-cta">What Next</button>
+    </section>
+
+
+
+
+
+    <!-- recommendation section -->
+    <section class="rmd-section p-3" id="rmd-section">
+        <h1 class="text-xl font-semibold">What you should do after registration</h1>
+        <p class="mt-3 text-gray-700">
+            You need to find your course rep or assistant course rep and 
+            ask them to add you to your course group, they might ask for 
+            proof that you are a student of this school, your admission letter 
+            is usually enough. You can ask other students or your coursemate 
+            for their contact info.
+        </p>
+
+        <h1 class="text-xl mt-6 font-semibold">Groups You can Join </h1>
+
+        <p class="text-gray-700 text-sm mt-3 italic">Campus and Faculty Information</p>
+        <div class="fac-container mt-5 flex flex-wrap gap-3 items-center"></div>
+
+
+        <p class="text-sm mt-6 text-gray-700 italic">Hostel Accomodation</p>
+        <div class="hostel-container mt-5 flex flex-wrap gap-3 items-center"></div>
+
+        <p class="text-sm text-gray-700 mt-6 italic">Casual and Fun</p>
+        <div class="fun-container mt-5 flex flex-wrap gap-3 items-center"></div>
+    </section>
+
+
+
+
+
+
+
+    <!-- custom js link -->
+    <script src="script.js"></script>
+
+    <!-- tailwind cdn link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
+
+

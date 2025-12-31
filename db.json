@@ -1,0 +1,42 @@
+[
+    {
+        "dept": "Computer Science",
+        "fac": "FOCIT",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Information Technology",
+        "fac": "FOCIT",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Software Engineering",
+        "fac": "FOCIT",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Cyber Security",
+        "fac": "FOCIT",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Medicine & Surgery",
+        "fac": "Clinical Science",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Public Health",
+        "fac": "Basic Medical Science",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Anatomy",
+        "fac": "Basic Medical Science",
+        "campus": "Osogbo"
+    },
+    {
+        "dept": "Physiology",
+        "fac": "Basic Medical Science",
+        "campus": "Osogbo"
+    }
+]

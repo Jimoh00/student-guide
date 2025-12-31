@@ -1,0 +1,37 @@
+{
+    "faculty": [
+        {
+            "group": "FOCIT",
+            "link": "#"
+        }
+    ],
+    "agents": [
+        {
+            "agent":"OmniLink",
+            "link": "#"
+        },
+        {
+            "agent": "ABC Realty",
+            "link": "#"
+        }, 
+        {
+            "agent": "Ironwood Agency",
+            "link": "#"
+        },
+        {
+            "agent": "Blackline Agency",
+            "link": "#"
+        }
+
+    ],
+    "fun": [
+        {
+            "group": "the fun group",
+            "link": "#"
+        },
+        {
+            "group": "Get together group",
+            "link": "#"
+        }
+    ]
+}

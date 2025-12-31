@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    font-size: 18px;
+}
+
+:root {
+    --blue: hsl(213, 49%, 52%);
+    --blue-200: hsl(213, 49%, 95%);
+    --white: #fff;
+}
+
+section {
+    width: 100%;
+}
+
+.header {
+    overflow: hidden;
+}
+
+.header-img {
+    width: 100%;
+    object-fit: cover;
+    scale: 1.2;
+}
+
+
+.cta {
+    background: var(--blue);
+    width: calc(100% - 48px);
+    color: white;
+    height: 48px;
+    border-radius: 999px;
+}
+
+section {
+    display: none;
+}
+
+.visible {
+    display: inline-block;
+} 
+
+.input-placeholder {
+    border: 2px solid var(--blue-200);
+    width: 100%;
+    height: 48px;
+    border-radius: 999px;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.input-placeholder.active {
+    border: 2px solid var(--blue);
+}
+
+
+.department-card {
+    background: var(--blue-200);
+    border-radius: 999px;
+}
+
+.department-card.active {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.department-btn {
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 999px;
+    width: calc(100% - 48px);
+    height: 48px;
+}
+
+
+
+.btn-placeholder {
+    width: calc(100% - 48px);
+}
+
+#bt-dept-btn {
+    margin-right: 12px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    background: transparent;
+
+}
+
+#facBtn {
+    height: 48px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: var(--white);
+    width: calc(100% - 48px);
+}
+
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px;
+    border: 2px solid var(--blue-200);
+    border-radius: 16px;
+}
+
+.checklist li.active {
+    background: var(--blue-200);
+    border: 2px solid var(--blue);
+    color: var(--blue);
+}
+
+#checklist-cta {
+    width: calc(100% - 48px);
+}
+
+.checker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.checklist li.active .checker {
+    border: 2px solid var(--blue);
+}
+
+.checklist li.active .checker .check {
+    background: var(--blue);
+}
+
+.checker-all.active {
+    border: 2px solid var(--blue);
+}
+
+.checker-all.active .check-all {
+    background: var(--blue);
+}
+
+
+
+
+.progress-header {
+    background: var(--blue-200);
+}
+
+
+
+
+
+.accordion-item {
+    border: 2px solid var(--blue-200);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 16px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background: #f5f5f5;
+}
+
+.accordion-icon {
+    transition: transform 0.3s;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.active {
+    max-height: 200px;
+}
+
+.accordion-body {
+    padding: 16px;
+    background: #f9f9f9;
+    color: #555;
+}
+
+.rmd-card {
+    background: var(--blue-200);
+    border: 2px solid var(--blue);
+    border-radius: 999px;
+    color: var(--blue);
+}
