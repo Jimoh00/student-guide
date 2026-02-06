@@ -5,17 +5,17 @@
         "campus": "Osogbo"
     },
     {
+        "dept": "Cyber Security",
+        "fac": "FOCIT",
+        "campus": "Osogbo"
+    },
+    {
         "dept": "Information Technology",
         "fac": "FOCIT",
         "campus": "Osogbo"
     },
     {
         "dept": "Software Engineering",
-        "fac": "FOCIT",
-        "campus": "Osogbo"
-    },
-    {
-        "dept": "Cyber Security",
         "fac": "FOCIT",
         "campus": "Osogbo"
     },

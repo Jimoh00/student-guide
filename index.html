@@ -16,23 +16,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- onboarding section -->
-    <section class="onboarding-section visible pb-[200px]" id="onboarding">
+<body class="bg-gray-50">
+
+    <!-- fab -->
+    <button id="fabBtn" class="fixed top-6 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg z-50 flex items-center justify-center cursor-pointer">
+        <i class="fa-solid fa-bars text-white"></i>
+    </button>
+
+    <div id="overlay" class="fixed inset-0 bg-blue-600 z-40">
+        <div id="menuContent" class=" flex items-center flex-col justify-center text-white text-center h-full opacity-0 transition-opacity duration-300">
+            <button id="closeBtn" class="absolute top-6 right-6 text-white text-3xl">
+                <i class="fa-solid fa-x"></i>
+            </button>
+
+            <h2 class="text-2xl text-white text-center mb-9 font-semibold">Quick links</h2>
+
+            <div class="space-y-6 text-center">
+                <a href="amd.html" class="block text-xl flex items-center justify-center gap-3"><i class="fa-solid fa-house"></i>Get Hostel</a>
+                <a href="#" class="block text-xl flex items-center justify-center gap-3"><i class="fa-solid fa-school"></i> Campus Buildings</a>
+                <a href="#" class="block text-xl flex items-center justify-center gap-3"><i class="fa-solid fa-people-group"></i>Groups to Join</a>
+                <a href="#" class="block text-xl flex items-center justify-center gap-3"><i class="fa-solid fa-clipboard-list"></i> Student Essentials</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- onboarding section -->.
+    <section class="onboarding-section visible pb-[200px] bg-gray-50" id="onboarding">
         <div class="header h-[20vh] relative">
             <img src="admin.jfif" class="header-img">
             <div class="absolute z-10 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
         </div>
         <h1 class="text-3xl font-semibold py-2 px-3 mt-3">Congratulations </h1>
         <p class="text-gray-700 px-3 py-2 mt-3 ;eading-relaxed">
-            <span class="text-xl">The hard part is over.</span>
+            <span class="font-semibold">The hard part is over.</span>
 
             You beat the odds and secured your admission. Now, let's make 
             sure the paperwork doesn't get in the way of your 
             celebration. Welcome to the University of Osun State.
         </p>
 
-        <button class="cta cta-onboarding absolute z-10 bottom-[24px] left-[24px] text-center  px-6">
+        <button class="cta cta-onboarding absolute z-10 bottom-[24px] left-[24px] text-center bg-blue-500 px-6">
             Continue
         </button>
     </section>
@@ -45,7 +68,7 @@
 
         <div class="input-placeholder mt-6 mb-9 flex items-center gap-3 px-4">
             <i data-lucide="search" class="text-gray-700"></i>
-            <input type="text" id="dept-search" placeholder="search for your department...">
+            <input type="text" id="dept-search" placeholder="search for your department..." class="bg-gray-50">
         </div>
 
         <div id="department-container" class="flex flex-wrap gap-3 items-center"></div>
@@ -54,7 +77,7 @@
     </section>
 
     <!-- faculty section -->
-    <section class="faculty-section p-3" id="faculty-section">
+    <section class="faculty-section p-3 text-lg" id="faculty-section">
         <p>Spot on </p>
 
         <p class="mt-3">you belong to <span id="faculty-display" class="font-semibold "></span></p>
@@ -67,7 +90,7 @@
         </p>
 
         <div class="btn-placeholder flex items-center fixed bottom-[24px] left-[24px]">
-            <button id="bt-dept-btn" class="flex items-center justify-center"><i data-lucide="arrow-left"></i></button>
+            <button id="bt-dept-btn" class="flex items-center justify-center back-btn"><i data-lucide="arrow-left"></i></button>
             <button id="facBtn">Continue</button>
         </div>
     </section>
@@ -92,7 +115,7 @@
                     <div class="check check-all"></div>
                 </div>
 
-                <p>Select All</p>
+                <p id="button-text">Select All</p>
             </button>
         </div>
         <ul class="checklist mt-4 flex flex-col gap-2">
@@ -166,14 +189,14 @@
 
         <div class="note mt-6">
             <p class="font-semibold">Note:</p>
-            <p>Make sure you have at least 4 cpoies each of all these documents before
-                proceeding.
+            <p class="text-gray-500">Make sure you have at least 4 copies each of all these documents before
+                proceeding. and have <span class="font-semibold">extra copies</span> for yourself.
             </p>
         </div>
         
         <div class="note mt-6">
             <p class="font-semibold">Pro Tip:</p>
-            <p>
+            <p class="text-gray-500">
                 There are several places to print your document on campus,
                 including the library, downtown, cisco etc. check the map to
                 find the nearest one.
@@ -200,7 +223,8 @@
 
 
         <h1 class=" mt-9 text-xl font-semibold">Unchecked Items</h1>
-        <div id="unchecked-accordion" class="accordion-container mt-2">
+        <p class="unchecked-text text-gray-500 mt-1"></p>
+        <div id="unchecked-accordion" class="accordion-container mt-4">
             <!-- accordion of unchecked items -->
         </div>
 
@@ -210,7 +234,10 @@
         </div>
 
         <div class="fixed z-1 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
-        <button class="cta fixed z-10 bottom-[24px] left-[24px]" id="progress-cta">Continue</button>
+        <div class="btn-placeholder flex items-center fixed bottom-[24px] left-[24px]">
+            <button id="backToRqd" class="flex items-center justify-center back-btn"><i data-lucide="arrow-left"></i></button>
+            <button id="progress-cta" class="cta">Continue</button>
+        </div>
     </section>
 
 
@@ -225,7 +252,7 @@
             <p class="text-gray-700">
                 Since you are a <span id="deptName" class="font-semibold">Computer Science </span>
                 student under <span id="facName" class="font-semibold">FOCIT</span> you would submit 
-                all your files at the faculty office at the faculty officer's building.
+                all your files to the faculty officer at the faculty officer's building.
             </p>
         </div>
 
@@ -287,6 +314,9 @@
 
     <!-- tailwind cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome link -->
+    <script src="https://kit.fontawesome.com/ecf01ca8f4.js" crossorigin="anonymous"></script>
 </body>
 </html>
 

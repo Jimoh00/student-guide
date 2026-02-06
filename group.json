@@ -8,19 +8,27 @@
     "agents": [
         {
             "agent":"OmniLink",
-            "link": "#"
+            "link": "#",
+            "rating": 3.4,
+            "office": "Second Gate"
         },
         {
             "agent": "ABC Realty",
-            "link": "#"
+            "link": "#",
+            "rating": 4.0,
+            "office": "Sha Sha"
         }, 
         {
             "agent": "Ironwood Agency",
-            "link": "#"
+            "link": "#",
+            "rating": 4.2,
+            "office": "Small Gate"
         },
         {
             "agent": "Blackline Agency",
-            "link": "#"
+            "link": "#",
+            "rating": 4.5,
+            "office": "URP"
         }
 
     ],

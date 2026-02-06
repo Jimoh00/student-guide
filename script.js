@@ -9,6 +9,37 @@ const progressSection = document.getElementById('progress-section');
 const directionSection = document.getElementById("direction-section");
 const rmdSection = document.getElementById('rmd-section');
 
+
+const fabBtn = document.getElementById("fabBtn");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+const menuContent = document.getElementById("menuContent");
+
+fabBtn.addEventListener('click', () => {
+    overlay.classList.add('active')
+    
+    setTimeout(() => {
+        menuContent.classList.remove('opacity-0');
+        menuContent.classList.add('opacity-100');
+        overlay.classList.remove('rounded-full');
+        fabBtn.style.display = 'none';
+    }, 200);
+});
+
+closeBtn.addEventListener('click', () => {
+    menuContent.classList.remove('opacity-100');
+    menuContent.classList.add('opacity-0');
+    
+    setTimeout(() => {
+        overlay.classList.remove('active');
+        fabBtn.style.display = 'flex';
+    }, 100);
+});
+
+
+
+
+
 onboardingCta = document.querySelector(".cta-onboarding");
 
 
@@ -45,7 +76,7 @@ fetch('db.json')
         // Create a card for each item
         data.forEach(item => {
             const card = document.createElement('div');
-            card.className = `department-card py-3 px-5`;
+            card.className = `department-card py-3 px-5 bg-blue-500/10`;
             
             card.innerHTML = `
                 <div class="faculty">${item.dept}</div>
@@ -73,7 +104,7 @@ fetch('db.json')
                     selectedFaculty = item.fac;
                     selectedDept = item.dept;
                     deptBtn.disabled = false;
-                    deptBtn.style.background = "hsl(213, 49%, 52%)"
+                    deptBtn.style.background = "hsl(217, 91%, 60%)"
                 }
             });
             
@@ -151,6 +182,7 @@ const facBtn = document.getElementById('facBtn');
 facBtn.addEventListener('click', () => {
     currentPage.classList.remove('visible');
     currentPage = checkListSection;
+    fabBtn.style.display = 'none';
     currentPage.classList.add('visible');
 });
 
@@ -176,6 +208,13 @@ function updateArrays() {
         }
     });
 
+    const UncheckedText = document.querySelector('.unchecked-text');
+    if (uncheckedItems.length === 0 ) {
+        UncheckedText.textContent = "All items are checked";
+    } else {
+        UncheckedText.textContent = "Click on the items to view instructions";
+    }
+
     console.log('Checked ITems:', checkedItems)
     console.log('Unchecked Items:', uncheckedItems)
 }
@@ -183,18 +222,45 @@ function updateArrays() {
 
 
 
+
+
 const documentInstructions = {
-    "JAMB Admission Letter (original copy)": "Visit JAMB portal at jamb.gov.ng/efacility and print your admission letter",
-    "Acceptance Receipt": "Pay acceptance fee at the university bursary and collect receipt",
-    "O'Level Result": "Download from WAEC or NECO portal with your scratch card",
-    "Birth Certificate": "Get from National Population Commission or your Local Government",
-    "Passport Photograph (at least 30 copies)": "Visit any photo studio - white background, formal wear",
-    "State of Origin Certificate": "Collect from your Local Government headquarters",
-    "Medical Clearance": "Visit university health center for medical examination",
-    "Screening Result": "Print from university portal after screening",
-    "Osun Admission Letter": "Download from UNIOSUN admission portal",
-    "Tax Clearance": "Get from State Internal Revenue Service office",
-    "JAMB Result": "Print from JAMB portal at jamb.gov.ng/efacility"
+    "JAMB Admission Letter (original copy)": `
+        <strong>Where:</strong> Visit JAMB portal at jamb.gov.ng/efacility and print your admission letter <br>
+        <strong>What to Bring:</strong> Your JAMB registration number and a valid ID <br> 
+        <strong>Cost: </strong> #500 - #1000 at cyber cafes <br>
+        <strong>Places: </strong> Cisco, Library, Downtown
+    `,
+    "Acceptance Receipt": `
+        <strong>Where:</strong> Pay acceptance fee at the university bursary and collect receipt <br>
+        <strong>What to Bring:</strong> Payment confirmation slip
+    `,
+    "O'Level Result": `
+        <strong>Where:</strong> Download from WAEC or NECO portal with your scratch card <br>
+        <strong>What to Bring:</strong> Your scratch card
+    `,
+    "Birth Certificate": `
+        <strong>Where:</strong> Get from National Population Commission or your Local Government
+    `,
+    "Passport Photograph (at least 30 copies)": `
+        <strong>Where:</strong> Visit any photo studio - white background, formal wear
+    `,
+    "State of Origin Certificate": `
+        <strong>Where:</strong> Collect from your Local Government headquarters
+    `,
+    "Medical Clearance": `
+        <strong>Where:</strong> Visit university health center for medical examination
+    `,
+    "Screening Result": `
+        <strong>Where:</strong> Print from university portal after screening
+    `,
+    "Osun Admission Letter": `
+        <strong>Where:</strong> Download from UNIOSUN admission portal
+    `,
+    "Tax Clearance": `
+        <strong>Where:</strong> Get from State Internal Revenue Service office
+    `,
+    "JAMB Result": `Print from JAMB portal at jamb.gov.ng/efacility`
 };
 
 
@@ -295,6 +361,7 @@ updateArrays();
 
 
 const checkListCta = document.getElementById('checklist-cta');
+const backToRqd = document.getElementById('backToRqd');
 
 checkListCta.addEventListener('click', () => {
     currentPage.classList.remove('visible');
@@ -303,6 +370,11 @@ checkListCta.addEventListener('click', () => {
     showResults();
 });
 
+backToRqd.addEventListener('click', () => {
+    currentPage.classList.remove('visible');
+    currentPage = checkListSection;
+    currentPage.classList.add('visible');
+})
 
 // Get all accordion headers
 const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -337,6 +409,7 @@ directionCta.addEventListener('click', () => {
     currentPage.classList.remove('visible');
     currentPage = rmdSection;
     currentPage.classList.add('visible');
+    fabBtn.style.display = 'block';
 });
 
 

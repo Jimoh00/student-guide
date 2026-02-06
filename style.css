@@ -10,7 +10,7 @@ html {
 }
 
 :root {
-    --blue: hsl(213, 49%, 52%);
+    --blue: hsl(217, 91%, 60%);
     --blue-200: hsl(213, 49%, 95%);
     --white: #fff;
 }
@@ -29,6 +29,14 @@ section {
     scale: 1.2;
 }
 
+#overlay {
+    clip-path: circle(0% at top right);
+    transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#overlay.active {
+    clip-path: circle(150% at top right);
+}
 
 .cta {
     background: var(--blue);
@@ -87,7 +95,7 @@ input {
     width: calc(100% - 48px);
 }
 
-#bt-dept-btn {
+.back-btn {
     margin-right: 12px;
     height: 48px;
     width: 48px;
