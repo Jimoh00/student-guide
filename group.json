@@ -2,7 +2,13 @@
     "faculty": [
         {
             "group": "FOCIT",
-            "link": "#"
+            "link": "#",
+            "type": "academic"
+        },
+        {
+            "group": "The Fun Group",
+            "link": "#",
+            "type": "lifestyle"
         }
     ],
     "agents": [

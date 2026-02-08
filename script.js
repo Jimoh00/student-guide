@@ -142,6 +142,7 @@ searchBar.addEventListener('input', (e) => {
     });
 });
 
+const buildingImg = document.getElementById('building-img');
 
 
 deptBtn.addEventListener('click', () => {
@@ -164,6 +165,14 @@ deptBtn.addEventListener('click', () => {
         currentPage.classList.add('visible');
     } else {
         deptBtn.style.background = '#004a7c';
+    }
+
+    buildingImg.innerHTML = "";
+
+    if (selectedFaculty === 'FOCIT') {
+        buildingImg.innerHTML = `
+            <img src="img/Admin.png" alt="FOCIT Building" class="w-full h-auto">
+        `;
     }
 });
 

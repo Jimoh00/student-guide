@@ -7,22 +7,19 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- lucide icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <!-- google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="p-3">
-    <h1 class="text-3xl flex items-center gap-3 "><a href="index.html"><i class="fa-solid fa-arrow-left" id="bTH"></i></a>Find Accomodation</h1>
+    <h1 class="text-2xl flex items-center gap-3 font-semibold"><a href="index.html"><i class="fa-solid fa-arrow-left" id="bTH"></i></a>Find Accomodation</h1>
 
     <p class="mt-3 text-gray-500">Here are some agents that can help you find accommodation:
         click on them to message them on WhatsApp.
     </p>
 
-    <div class="flex flex-col gap-3 items-center w-full" id="agent-list">
+    <div class="flex flex-col mt-5 gap-3 items-center w-full" id="agent-list">
 
     </div>
 
@@ -44,7 +41,6 @@
             .then(data => {
                 const agentList = document.getElementById('agent-list');
                 agentList.innerHTML = ''; 
-                agentList.className = `mt-5  flex flex-col gap-4 items-center`;
                 const agents = data.agents;
 
                 agents.forEach(item => {
@@ -52,13 +48,15 @@
                     agent.className = `p-5 shadow w-full rounded-2xl border border-gray-400/20`;
                     
                     agent.innerHTML = `
-                        <h2>${item.agent}</h2>
+                        <a href="${item.link}">
+                            <h2>${item.agent}</h2>
 
-                        <div class="flex gap-3 mt-3 font-light text-gray-400 items-center ">
-                            <p class="text-sm italic">Rating: <span class="${item.rating >= 4 ? "text-green-600" : "text-red-600"}"><i class="fa-solid fa-star"></i>${item.rating}</span></p>
-                            <p>|</p>
-                            <p class="text-sm  italic">Office: ${item.office}</p>
-                        </div>
+                            <div class="flex gap-3 mt-3 font-light mt-2 text-gray-400 items-center ">
+                                <p class="text-sm italic">Rating: <span class="${item.rating >= 4 ? "text-green-600" : "text-red-600"}"><i class="fa-solid fa-star"></i>${item.rating}</span></p>
+                                <p>|</p>
+                                <p class="text-sm  italic">Office: ${item.office}</p>
+                            </div>    
+                        </a>
                     `
                     agentList.appendChild(agent);
                 })
